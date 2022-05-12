@@ -10,5 +10,5 @@ data class Comment(
     internal val isDon: Boolean,
     internal val replyToUser: Int,
     internal val replyToComment: Int,
-    internal val attachments: Array<Attachment>,
+    internal val attachments: List<Attachment>,
 )

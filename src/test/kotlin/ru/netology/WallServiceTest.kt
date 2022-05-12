@@ -18,13 +18,13 @@ class WallServiceTest {
             replyOwnerId = 0,
             replyPostId = 0,
             friendsOnly = false,
-            comments = emptyArray<Comment>(),
+            comments = emptyList(),
             copyright = "Copyright",
             likes = 0,
             repost = 0,
             views = 0,
             postType = "Post type",
-            attachments = emptyArray<Attachment>(),
+            attachments = emptyList(),
             signerId = 0,
             copyHistory = "History",
             canPin = true,
@@ -68,7 +68,7 @@ class WallServiceTest {
         WallService.createComment(Comment(
             1, post.id, 555, 123, "Comment",
             Donut, false, 0, 0,
-            emptyArray<Attachment>()))
+            emptyList()))
         assertNotEquals(0, post.id)
     }
 
@@ -79,6 +79,6 @@ class WallServiceTest {
         WallService.createComment(Comment(
             1, 444, 555, 123, "Comment",
             Donut, false, 0, 0,
-            emptyArray<Attachment>()))
+            emptyList()))
     }
 }

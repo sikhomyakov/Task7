@@ -3,7 +3,7 @@ package ru.netology
 
 object WallService {
     private val posts = ArrayList<Post>()
-    val comments = ArrayList<Comment>()
+    private val comments = ArrayList<Comment>()
 
 
     fun add(post: Post): Post {
@@ -21,12 +21,14 @@ object WallService {
     }
 
     fun createComment(comment: Comment) {
-
+        var count = 0
         for (post: Post in posts) {
             if (post.id == comment.postId) {
                 comments.add(comment)
-            } else throw PostNotFoundException("Post not found!")
+                count ++
+            }
         }
+        if (count == 0) throw PostNotFoundException("Post not found!")
     }
 
     fun generateId(): Int {
